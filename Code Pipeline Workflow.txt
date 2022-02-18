@@ -1,0 +1,21 @@
+Code Pipeline Workflow
+
+Code Repository 
+House the CI/CD code for deployment
+Any push to master or main branch will trigger the code pipeline
+
+Code Pipeline
+Pull the source code from the source code repository
+Trigger and starts a new codebuild
+
+CodeBuild
+Runs and create docker image
+Push the image to AWS Elastic Container Registry (ECR)
+
+Elastic Container Registry (ECR)
+Store the newly created docker image
+
+Elastic Container Service (ECS)
+Pull the new docker iamge from ECR
+
+The deployment is done in the customers AWS account
